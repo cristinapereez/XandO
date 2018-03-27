@@ -1,4 +1,4 @@
-//Author:
+//Author: Cristina Perez
 #include <iostream>
 
 using namespace std;
@@ -40,7 +40,39 @@ int main()
     {
       cout<<"Values must be between 0 and 2.\n";
     }
-    //TODO: Place the piece and swap turns
+    else
+    {
+    board[row][column] = turn;
+    }
+  if( turn == X)
+  {
+    turn = O;
+    cout<<turn<<"'s turn.\n";
+    cout<<"Which column and row (0-2, or -1 for both to quit)?\n";
+    cin>>column;
+    cin>>row;
+
+    //Make sure the user isn't quitting
+    if(column == QUIT && row == QUIT)
+    {
+      playing = false;
+    }
+    //Print error if the column and/or row is out of bounds of 0-2
+    else if( column < 0 || row < 0 || column > 2 || row > 2 )
+    {
+      cout<<"Values must be between 0 and 2.\n";
+    }
+    else
+    {
+    board[row][column] = turn;
+    }
+    turn = X;
+  }
+  else
+  {
+    turn = X;
+  }
+   //TODO: Place the piece and swap turns
     //Outline
     //1. When neither of the (above) if nor else if statements are true, then...
     //1-A.  Assign the board location of row and column to the value of turn
@@ -50,6 +82,13 @@ int main()
     //1-C-1.  turn should be assigned the value 'X'
     
     cout<<"\nBOARD\n-----\n";
+     for(int r = 0; r < ROWS; r++)
+     {
+        for(int c = 0; c < COLUMNS; c++)
+        {
+          cout<<board[r][c]<<" "<<endl;
+        }
+     }
     //TODO: Print the current board
     //Outline
     //1. Traverse through each row, calling the current row r
