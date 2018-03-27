@@ -39,6 +39,7 @@ int main()
     else if( column < 0 || row < 0 || column > 2 || row > 2 )
     {
       cout<<"Values must be between 0 and 2.\n";
+      turn = O;
     }
     else
     {
@@ -66,8 +67,9 @@ int main()
      {
         for(int c = 0; c < COLUMNS; c++)
         {
-          cout<<board[r][c]<<" "<<endl;
+          cout<<board[r][c]<<" ";
         }
+        cout<<endl;
      }
     //TODO: Print the current board
     //Outline
