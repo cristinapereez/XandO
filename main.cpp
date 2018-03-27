@@ -68,11 +68,7 @@ int main()
     }
     turn = X;
   }
-  else
-  {
-    turn = X;
-  }
-   //TODO: Place the piece and swap turns
+  //TODO: Place the piece and swap turns
     //Outline
     //1. When neither of the (above) if nor else if statements are true, then...
     //1-A.  Assign the board location of row and column to the value of turn
