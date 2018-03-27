@@ -47,25 +47,9 @@ int main()
   if( turn == X)
   {
     turn = O;
-    cout<<turn<<"'s turn.\n";
-    cout<<"Which column and row (0-2, or -1 for both to quit)?\n";
-    cin>>column;
-    cin>>row;
-
-    //Make sure the user isn't quitting
-    if(column == QUIT && row == QUIT)
-    {
-      playing = false;
-    }
-    //Print error if the column and/or row is out of bounds of 0-2
-    else if( column < 0 || row < 0 || column > 2 || row > 2 )
-    {
-      cout<<"Values must be between 0 and 2.\n";
-    }
-    else
-    {
-    board[row][column] = turn;
-    }
+  }
+  else
+  {
     turn = X;
   }
   //TODO: Place the piece and swap turns
