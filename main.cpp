@@ -10,6 +10,7 @@ const char BLANK = ' ';
 const char X = 'X';
 const char O = 'O';
 const int QUIT = -1;
+char winner = ' ';
 
 int main()
 {
@@ -53,32 +54,64 @@ int main()
   {
     turn = X;
   }
-  //TODO: Place the piece and swap turns
-    //Outline
-    //1. When neither of the (above) if nor else if statements are true, then...
-    //1-A.  Assign the board location of row and column to the value of turn
-    //1-B.  When turn has the value 'X', then...
-    //1-B-1.  turn should be assigned the value 'O'
-    //1-C.  In any other case, then...
-    //1-C-1.  turn should be assigned the value 'X'
     
-    cout<<"\nBOARD\n-----\n";
-     for(int r = 0; r < ROWS; r++)
+   cout<<"\nBOARD\n-----\n";
+   for(int r = 0; r < ROWS; r++)
+   {
+     for(int c = 0; c < COLUMNS; c++)
      {
-        for(int c = 0; c < COLUMNS; c++)
-        {
-          cout<<board[r][c]<<" ";
-        }
-        cout<<endl;
+        cout<<board[r][c]<<" ";
      }
-    //TODO: Print the current board
-    //Outline
-    //1. Traverse through each row, calling the current row r
-    //1-A. Traverse through each column in row r, calling the current column c
-    //1-A-1.  Display the value of the board at location of r and c
-    //1-A-2. Display a space
-    //1-B. Display an newline to move to the next row of the board
-    
+     cout<<endl;
+   }
+if( board[0][0] != ' ' && board[0][0] == board[0][1] && board[0][0] == board[0][2])
+{
+ playing = false;
+ winner = board[0][0];
+ cout<<"Winner is "<<winner<<endl;
+}
+else if(board[0][0] != ' ' && board[0][0] == board[1][0] && board[0][0] == board[2][0])
+{
+ playing = false;
+ winner = board[0][0];
+ cout<<"Winner is "<<winner<<endl;
+}
+else if(board[0][0] != ' ' && board[0][0] == board[1][1] && board[0][0] == board[2][2])
+{
+ playing = false;
+ winner = board[0][0];
+ cout<<"Winner is "<<winner<<endl;
+}
+else if(board[1][1] != ' ' && board[1][1] == board[0][1] && board[1][1] == board[2][1])
+{
+ playing = false;
+ winner = board[1][1];
+ cout<<"Winner is "<<winner<<endl;
+}
+else if(board[1][1] != ' ' && board[1][1] == board[1][0] && board[1][1] == board[1][2])
+{
+ playing = false;
+ winner = board[1][1];
+ cout<<"Winner is "<<winner<<endl;
+}
+else if(board[1][1] != ' ' && board[1][1] == board[0][2] && board[1][1] == board[2][0])
+{
+ playing = false;
+ winner = board[1][1];
+ cout<<"Winner is "<<winner<<endl;
+}
+else if(board[2][2] != ' ' && board[2][2] == board[2][0] && board[2][2] == board[2][1])
+{
+ playing = false;
+ winner = board[2][2];
+ cout<<"Winner is "<<winner<<endl;
+}
+else if(board[2][2] != ' ' && board[2][2] == board[0][2] && board[2][2] == board[1][2])
+{
+ playing = false;
+ winner = board[2][2];
+ cout<<"Winner is "<<winner<<endl;
+}
   }while( playing );
 
   cout<<"Goodbye!\n";
